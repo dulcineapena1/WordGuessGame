@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <title>Guessword</title>
+</head>
+<body>
+    
+    <header>
+        <img src="assets/images/header.png">
+    </header>
+
+    <div class="container">
+            <div class="instructions">
+                <p>Press any key to get started. Wins current word</p>
+            </div>
+            <div id ="rem" class="remaining">
+                Number
+
+            </div>
+            <div id="already" class="guessed">
+
+                    Letters guessed_____
+                
+            </div>
+            <img id="idimagen" class="s1" src="assets/images/rebozo.jpg">
+            <div id="ids" class="realword">
+                
+                
+
+            </div>
+    </div>
+
+
+    <script type="text/javascript">
+  
+        //aqui estoy poniendo la palabra en ninguna o cero
+          var elguess = 0;
+          
+          var restantes = 0;
+          
+    
+        
+    
+            // aquí debería de ser un objeto y luego llamarlas abajo,
+            // pero no logré poder llamarlas, por eso lo hice en
+            // variables.
+            //A cada letra le puse un _ para que al teclear se reemplazara
+            // ese _ por una letra.
+          var t =["_  "];
+          var a = ["_  "];
+          var m = ["_  "];
+          var e = ["_  "];
+          var l =["_  "];
+    
+          var r = ["_  "];
+          var e = ["_  "];
+          var b = ["_  "];
+          var o = ["_  "];
+          var z = ["_  "];
+          var o = ["_  "];
+    
+         
+          
+          //el id se nombrará con esta variable. Es la de la palabra a adivinar.
+          var ids = document.getElementById("ids");
+          
+       
+    
+         
+          
+        
+         //Voy a correr primero la palabra que está en esta función      
+         conjuntodos();
+          
+          
+          //con esto voy a aparecer todas las letras tecleadas en esta variable que 
+          //más abajo llamo.
+          var already = document.getElementById("already");
+          
+          var rem = document.getElementById("rem");
+    
+          
+          
+    
+         
+            //aquì cambio la imagen por otra al acertar la primer palabra
+            function reemplazo (){
+            document.getElementById('idimagen').src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqASuUys5IgO67T9pIkhiExtgX2FQKF646RE5tXHTSknb8pOrMyg";
+            }
+    
+    
+          //a cada palabra a adivinar le puse un nombre de función
+          // para identificarlas en el código
+    
+          // Esta es una palabra
+            function conjuntouno (){
+                ids.innerHTML= "CORRECT! IT IS REBOZO ---> NEW WORD! CLIC a";
+                already.innerHTML= "Letters guessed__";
+                reemplazo();
+                document.onkeyup = function (event){
+                  
+                  var type = event.key;
+                    //ligo la letra tecleada con la variable
+                  if (type === "t" ){
+                      t= "t";                 
+                  }
+                  if (type === "a"){
+                      a = "a";                  
+                  }
+                  if (type === "m"){
+                      m = "m";                
+                  }
+                  if (type === "a"){
+                      e = "a";                  
+                  }
+                  if (type === "l"){
+                      l = "l";                  
+                  }
+                             
+                 //asigno los valores para que aparezcan en la posición deseada en pantalla y formen palabra
+                    var suma2 = t + a + m + e + l;
+                    ids.innerHTML= suma2;
+    
+                    // aquí es para mostrar todas las letras tecleadas 
+                    var al =["  "];                 
+                    var al = event.key;                
+                    already.innerText += al;
+    
+    
+                    if ((t === "t") && (a === "a") && (m === "m") && (e === "a") && (l === "l")){
+                   
+                    ids.innerHTML="CORRECT! IT IS TAMAL! GAME OVER *SAD*";
+                    }
+          
+    
+                    
+                    
+                }  
+            }
+          
+          
+            
+            
+    
+    
+            // Esta es otra palabra
+          function conjuntodos (){
+                document.onkeyup = function (event){
+                  var type = event.key;
+                  //ligo la letra tecleada con la variable
+                  if (type === "r" ){
+                      r= "r";                 
+                  }
+                  if (type === "e"){
+                      e = "e";                  
+                  }
+                  if (type === "b"){
+                      b = "b";              
+                  }
+                  if (type === "o"){
+                      o = "o";                  
+                  }
+                  if (type === "z"){
+                      z = "z";                  
+                  }
+                  if (type === "o"){
+                      o = "o";                  
+                  }
+                    //asigno los valores para que aparezcan en la posición deseada en pantalla y formen palabra
+                    var suma = r + e + b + o + z + o;
+                    ids.innerHTML= suma;
+    
+     
+                    // aquí abajo muestro cualquier letra tecleada           
+                    var al =["  "];                
+                    var al = event.key;                
+                    already.innerText += al;
+                    
+    
+    ///Aqui no se como es, quiero poner que si se aumenta el lenght de lo tecleado
+    // aumente o disminuye el numero de veces que puede seguir tecleando
+                  
+                   
+    
+                  
+                   
+                  
+                //Aquí estoy denotando cuando se debe pasar a la siguiente palabra, que
+                //es la funcion que aquí dentro pongo
+                if ((r === "r") && (e === "e") && (b === "b") && (o === "o") && (z === "z") && (o === "o")){
+                   
+                    conjuntouno();
+                        
+                }                   
+                }  
+            }
+    
+    
+    
+  
+            
+          
+    </script>     
+         
+     
+         
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+
+header {
+    margin: auto;
+    width: 960px;
+}
+
+.container {
+    width: 960px;
+    background-color: #00bf32c7;
+    height: 298px;
+    margin: auto;
+    
+}
+
+.realword{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 4px;
+    font-size: 57px;
+    font-family: sans-serif;
+    color: white;
+}
+
+.guessed{
+    width: 30%;
+    float: left;
+    background-color: purple;
+}
+
+#already{
+    width: 30%;
+    float: left;
+    background-color: #28d4ac;
+    font-family: sans-serif;
+    text-align: center
+}
+
+.remaining{
+    background-color: #135f4d;
+    width: 30%;
+    float: left;
+    font-family: sans-serif;
+    text-align: center
+}
+
+.instructions{
+    width: 40%;
+    background-color: #28d4ac;
+    vertical-align: middle;
+    float: left;
+    font-style: oblique;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.s1{
+    width: 9%;
+    float: left;
+    margin-left: 17%;
+    margin: auto;
+    margin-top: 62px;
+}
